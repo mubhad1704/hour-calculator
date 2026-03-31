@@ -254,7 +254,7 @@ const HourCalculator = () => {
             )}
           </div>
 
-          <div className="px-6 pb-6 max-h-48 overflow-y-auto scrollbar-thin scrollbar-thumb-white/10 scrollbar-track-transparent">
+          <div className="px-6 pb-6 max-h-48 overflow-y-auto scrollbar-hidden">
             {entries.length === 0 ? (
               <div className="flex flex-col items-center justify-center py-8 text-zinc-600">
                 <div className="w-12 h-12 rounded-full bg-white/[0.03] flex items-center justify-center mb-3">
