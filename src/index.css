@@ -1,0 +1,56 @@
+@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap');
+
+@theme {
+  --font-sans: 'Inter', 'system-ui', 'sans-serif';
+  --font-heading: 'Outfit', 'Inter', 'system-ui', 'sans-serif';
+
+  --color-accent: #3b82f6;
+  --color-accent-glow: rgba(59,130,246,0.5);
+  
+  --color-glass-bg: rgba(255,255,255,0.03);
+  --color-glass-border: rgba(255,255,255,0.08);
+
+  --animate-fade-in: cardFadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  --animate-slide-in: slideIn 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+  @keyframes cardFadeIn {
+    0% { opacity: 0; transform: translateY(20px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes slideIn {
+    0% { opacity: 0; transform: translateX(-10px); }
+    100% { opacity: 1; transform: translateX(0); }
+  }
+}
+
+@layer base {
+  body {
+    @apply bg-[#030303] text-white font-sans antialiased selection:bg-blue-500/30;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading tracking-tight;
+  }
+
+  input[type="number"]::-webkit-inner-spin-button,
+  input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] rounded-[24px] shadow-2xl;
+  }
+
+  .btn-primary {
+    @apply bg-white text-black font-bold py-2 px-6 rounded-xl transition-all hover:scale-[1.02] hover:shadow-[0_0_20px_rgba(255,255,255,0.2)] active:scale-[0.98];
+  }
+}
