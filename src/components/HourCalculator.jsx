@@ -196,6 +196,7 @@ const HourCalculator = () => {
     setCurrentMinutes("");
     setOperation("add");
     setShowConfirm(false);
+    setEditingId(null)
   };
 
   const total = useMemo(() => {
