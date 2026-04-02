@@ -221,11 +221,11 @@ const HourCalculator = () => {
   const formatNumber = (num) => num.toString().padStart(2, "0");
 
   return (
-    <div className="w-full max-w-md mx-auto px-4 py-8 sm:px-6 animate-fade-in">
+    <div className="w-full md:max-w-md mx-auto md:px-4 md:py-8  animate-fade-in">
       {/* Main Card */}
       <div className="glass-card overflow-hidden">
         {/* Header */}
-        <header className="flex items-center justify-between p-6 border-b border-white/[0.08]">
+        <header className="flex items-center justify-between p-6 border-b border-white/8">
           <div className="flex items-center gap-3">
             <div className="bg-accent/10 p-2.5 rounded-xl text-accent shadow-[0_0_20px_rgba(59,130,246,0.3)]">
               <Icons.Clock className="w-5 h-5" />
@@ -251,7 +251,7 @@ const HourCalculator = () => {
         </header>
 
         {/* Result Display */}
-        <section className="relative p-8 bg-gradient-to-b from-white/[0.02] to-transparent">
+        <section className="relative p-8 bg-linear-to-b from-white/2 to-transparent">
           <div
             className="absolute inset-0 bg-accent/5 opacity-0 transition-opacity duration-500"
             style={{ opacity: isAnimating ? 0.5 : 0 }}
@@ -305,7 +305,7 @@ const HourCalculator = () => {
                 min="0"
                 value={currentHours}
                 onChange={(e) => setCurrentHours(e.target.value)}
-                className="w-full bg-white/[0.03] border border-white/[0.08] rounded-2xl py-4 px-4 text-2xl font-bold text-center text-white placeholder:text-zinc-700 focus:outline-none focus:border-accent/50 focus:bg-white/[0.05] transition-all duration-200 tabular-nums"
+                className="w-full bg-white/3 border border-white/8 rounded-2xl py-4 px-4 text-2xl font-bold text-center text-white placeholder:text-zinc-700 focus:outline-none focus:border-accent/50 focus:bg-white/5 transition-all duration-200 tabular-nums"
               />
               <label className="absolute -bottom-5 left-0 right-0 text-center text-[10px] font-medium text-zinc-600 uppercase tracking-wider">
                 Hours
@@ -320,7 +320,7 @@ const HourCalculator = () => {
                 max="59"
                 value={currentMinutes}
                 onChange={(e) => setCurrentMinutes(e.target.value)}
-                className="w-full bg-white/[0.03] border border-white/[0.08] rounded-2xl py-4 px-4 text-2xl font-bold text-center text-white placeholder:text-zinc-700 focus:outline-none focus:border-accent/50 focus:bg-white/[0.05] transition-all duration-200 tabular-nums"
+                className="w-full bg-white/3 border border-white/8 rounded-2xl py-4 px-4 text-2xl font-bold text-center text-white placeholder:text-zinc-700 focus:outline-none focus:border-accent/50 focus:bg-white/5 transition-all duration-200 tabular-nums"
               />
               <label className="absolute -bottom-5 left-0 right-0 text-center text-[10px] font-medium text-zinc-600 uppercase tracking-wider">
                 Minutes
@@ -331,7 +331,7 @@ const HourCalculator = () => {
           {/* Operation Toggle & Submit */}
           <div className="flex flex-col sm:flex-row gap-3 pt-4">
             {/* Operation Toggle */}
-            <div className="flex-1 flex bg-white/[0.03] border border-white/[0.08] p-1 rounded-2xl">
+            <div className="flex-1 flex bg-white/3 border border-white/8 p-1 rounded-2xl">
               <button
                 type="button"
                 onClick={() => setOperation("add")}
@@ -371,7 +371,7 @@ const HourCalculator = () => {
         </form>
 
         {/* History Section */}
-        <section className="border-t border-white/[0.08]">
+        <section className="border-t border-white/8">
           <div className="px-6 py-4 flex items-center gap-2 text-zinc-500">
             <Icons.History size={14} />
             <span className="text-xs font-semibold uppercase tracking-wider">
@@ -387,7 +387,7 @@ const HourCalculator = () => {
           <div className="px-6 pb-6 max-h-48 overflow-y-auto scrollbar-hidden">
             {entries.length === 0 ? (
               <div className="flex flex-col items-center justify-center py-8 text-zinc-600">
-                <div className="w-12 h-12 rounded-full bg-white/[0.03] flex items-center justify-center mb-3">
+                <div className="w-12 h-12 rounded-full bg-white/3 flex items-center justify-center mb-3">
                   <Icons.History size={20} className="opacity-50" />
                 </div>
                 <p className="text-sm">No entries yet</p>
@@ -400,7 +400,7 @@ const HourCalculator = () => {
                 {entries.map((entry, index) => (
                   <div
                     key={entry.id}
-                    className="group flex items-center justify-between bg-white/[0.03] hover:bg-white/[0.06] border border-white/[0.04] rounded-xl px-4 py-3 transition-all duration-200 animate-slide-in"
+                    className="group flex items-center justify-between bg-white/3 hover:bg-white/6 border border-white/4 rounded-xl px-4 py-3 transition-all duration-200 animate-slide-in"
                     style={{ animationDelay: `${index * 50}ms` }}
                   >
                     <div className="flex items-center gap-3">
@@ -467,7 +467,7 @@ const HourCalculator = () => {
             <div className="flex gap-3">
               <button
                 onClick={() => setShowConfirm(false)}
-                className="flex-1 py-3 px-4 rounded-xl bg-white/[0.05] hover:bg-white/[0.1] text-sm font-semibold text-zinc-300 transition-all duration-200"
+                className="flex-1 py-3 px-4 rounded-xl bg-white/5 hover:bg-white/10 text-sm font-semibold text-zinc-300 transition-all duration-200"
               >
                 Cancel
               </button>

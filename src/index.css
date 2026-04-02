@@ -47,7 +47,7 @@
 
 @layer components {
   .glass-card {
-    @apply bg-white/[0.03] backdrop-blur-xl border border-white/[0.08] rounded-[24px] shadow-2xl;
+    @apply bg-white/3 backdrop-blur-xl border border-white/8 rounded-[24px] shadow-2xl;
   }
 
   .btn-primary {
