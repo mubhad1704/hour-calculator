@@ -3,46 +3,140 @@ import React, { useState, useMemo } from "react";
 // SVG Icons with refined styling
 const Icons = {
   Clock: ({ className = "" }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
       <circle cx="12" cy="12" r="10" />
       <polyline points="12 6 12 12 16 14" />
     </svg>
   ),
   Plus: ({ size = 18, className = "" }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
       <line x1="12" y1="5" x2="12" y2="19" />
       <line x1="5" y1="12" x2="19" y2="12" />
     </svg>
   ),
   Minus: ({ size = 18, className = "" }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
       <line x1="5" y1="12" x2="19" y2="12" />
     </svg>
   ),
   X: ({ size = 16, className = "" }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
       <line x1="18" y1="6" x2="6" y2="18" />
       <line x1="6" y1="6" x2="18" y2="18" />
     </svg>
   ),
   RotateCcw: ({ size = 18, className = "" }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
       <path d="M3 2v6h6" />
       <path d="M3 13a9 9 0 1 0 3-7.7L3 8" />
     </svg>
   ),
   History: ({ size = 16, className = "" }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
       <path d="M3 3v5h5" />
       <path d="M3.05 13A9 9 0 1 0 6 5.3L3 8" />
       <path d="M12 7v5l4 2" />
     </svg>
   ),
   AlertCircle: ({ size = 20, className = "" }) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
       <circle cx="12" cy="12" r="10" />
       <line x1="12" y1="8" x2="12" y2="12" />
       <line x1="12" y1="16" x2="12.01" y2="16" />
+    </svg>
+  ),
+  Edit: ({ size = 16, className = "" }) => (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      <path d="M12 20h9" />
+      <path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z" />
     </svg>
   ),
 };
@@ -54,6 +148,7 @@ const HourCalculator = () => {
   const [operation, setOperation] = useState("add");
   const [showConfirm, setShowConfirm] = useState(false);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [editingId, setEditingId] = useState(null);
 
   const addEntry = (e) => {
     e.preventDefault();
@@ -65,9 +160,30 @@ const HourCalculator = () => {
     setIsAnimating(true);
     setTimeout(() => setIsAnimating(false), 300);
 
-    setEntries([...entries, { id: Date.now(), hours: h, minutes: m, operation }]);
+    if (editingId) {
+      setEntries((prev) =>
+        prev.map((entry) =>
+          entry.id === editingId
+            ? { ...entry, hours: h, minutes: m, operation }
+            : entry,
+        ),
+      );
+      setEditingId(null);
+    } else {
+      setEntries([
+        ...entries,
+        { id: Date.now(), hours: h, minutes: m, operation },
+      ]);
+    }
+
     setCurrentHours("");
     setCurrentMinutes("");
+  };
+  const editEntry = (entry) => {
+    setCurrentHours(entry.hours);
+    setCurrentMinutes(entry.minutes);
+    setOperation(entry.operation);
+    setEditingId(entry.id);
   };
 
   const removeEntry = (id) => {
@@ -107,7 +223,6 @@ const HourCalculator = () => {
     <div className="w-full max-w-md mx-auto px-4 py-8 sm:px-6 animate-fade-in">
       {/* Main Card */}
       <div className="glass-card overflow-hidden">
-        
         {/* Header */}
         <header className="flex items-center justify-between p-6 border-b border-white/[0.08]">
           <div className="flex items-center gap-3">
@@ -115,8 +230,12 @@ const HourCalculator = () => {
               <Icons.Clock className="w-5 h-5" />
             </div>
             <div>
-              <h1 className="text-xl font-heading font-bold tracking-tight">TimeFlow</h1>
-              <p className="text-xs text-zinc-500 font-medium">Hour Calculator</p>
+              <h1 className="text-xl font-heading font-bold tracking-tight">
+                TimeFlow
+              </h1>
+              <p className="text-xs text-zinc-500 font-medium">
+                Hour Calculator
+              </p>
             </div>
           </div>
 
@@ -132,14 +251,17 @@ const HourCalculator = () => {
 
         {/* Result Display */}
         <section className="relative p-8 bg-gradient-to-b from-white/[0.02] to-transparent">
-          <div className="absolute inset-0 bg-accent/5 opacity-0 transition-opacity duration-500" style={{ opacity: isAnimating ? 0.5 : 0 }} />
-          
+          <div
+            className="absolute inset-0 bg-accent/5 opacity-0 transition-opacity duration-500"
+            style={{ opacity: isAnimating ? 0.5 : 0 }}
+          />
+
           <div className="relative text-center">
             <p className="text-[11px] font-semibold text-zinc-500 uppercase tracking-[0.2em] mb-3">
               Total Duration
             </p>
 
-            <div 
+            <div
               className={`flex items-baseline justify-center gap-1 font-heading font-bold transition-all duration-300 ${
                 total.isNegative ? "text-red-500" : "text-white"
               }`}
@@ -150,17 +272,22 @@ const HourCalculator = () => {
               <span className="text-5xl sm:text-6xl tracking-tighter tabular-nums">
                 {formatNumber(total.hours)}
               </span>
-              <span className="text-lg sm:text-xl text-zinc-400 font-medium ml-1">h</span>
-              
+              <span className="text-lg sm:text-xl text-zinc-400 font-medium ml-1">
+                h
+              </span>
+
               <span className="text-5xl sm:text-6xl tracking-tighter tabular-nums ml-2">
                 {formatNumber(total.minutes)}
               </span>
-              <span className="text-lg sm:text-xl text-zinc-400 font-medium ml-1">m</span>
+              <span className="text-lg sm:text-xl text-zinc-400 font-medium ml-1">
+                m
+              </span>
             </div>
 
             {total.totalEntries > 0 && (
               <p className="mt-3 text-xs text-zinc-600">
-                {total.totalEntries} {total.totalEntries === 1 ? "entry" : "entries"}
+                {total.totalEntries}{" "}
+                {total.totalEntries === 1 ? "entry" : "entries"}
               </p>
             )}
           </div>
@@ -183,7 +310,7 @@ const HourCalculator = () => {
                 Hours
               </label>
             </div>
-            
+
             <div className="relative group">
               <input
                 type="number"
@@ -236,7 +363,7 @@ const HourCalculator = () => {
               disabled={!currentHours && !currentMinutes}
               className="btn-primary flex items-center justify-center gap-2 disabled:opacity-40 disabled:cursor-not-allowed disabled:hover:scale-100"
             >
-              <span>Append</span>
+              <span>{editingId ? "Update" : "Append"}</span>
               <Icons.Plus size={16} className="opacity-60" />
             </button>
           </div>
@@ -246,7 +373,9 @@ const HourCalculator = () => {
         <section className="border-t border-white/[0.08]">
           <div className="px-6 py-4 flex items-center gap-2 text-zinc-500">
             <Icons.History size={14} />
-            <span className="text-xs font-semibold uppercase tracking-wider">History</span>
+            <span className="text-xs font-semibold uppercase tracking-wider">
+              History
+            </span>
             {entries.length > 0 && (
               <span className="ml-auto text-xs text-zinc-600">
                 {entries.length} items
@@ -261,7 +390,9 @@ const HourCalculator = () => {
                   <Icons.History size={20} className="opacity-50" />
                 </div>
                 <p className="text-sm">No entries yet</p>
-                <p className="text-xs mt-1 opacity-60">Add your first time entry</p>
+                <p className="text-xs mt-1 opacity-60">
+                  Add your first time entry
+                </p>
               </div>
             ) : (
               <div className="space-y-2">
@@ -285,14 +416,24 @@ const HourCalculator = () => {
                         {entry.hours}h {entry.minutes}m
                       </span>
                     </div>
-                    
-                    <button
-                      onClick={() => removeEntry(entry.id)}
-                      className="opacity-0 group-hover:opacity-100 p-1.5 rounded-lg text-zinc-500 hover:text-red-400 hover:bg-red-500/10 transition-all duration-200"
-                      title="Remove entry"
-                    >
-                      <Icons.X size={14} />
-                    </button>
+
+                    <div className="flex items-center gap-1 opacity-0 group-hover:opacity-100 transition-all">
+                      <button
+                        onClick={() => editEntry(entry)}
+                        className="p-1.5 rounded-lg text-zinc-500 hover:text-blue-400 hover:bg-blue-500/10 transition-all duration-200"
+                        title="Edit entry"
+                      >
+                        <Icons.Edit size={14} />
+                      </button>
+
+                      <button
+                        onClick={() => removeEntry(entry.id)}
+                        className="p-1.5 rounded-lg text-zinc-500 hover:text-red-400 hover:bg-red-500/10 transition-all duration-200"
+                        title="Remove entry"
+                      >
+                        <Icons.X size={14} />
+                      </button>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -304,19 +445,22 @@ const HourCalculator = () => {
       {/* Confirmation Modal */}
       {showConfirm && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-4 animate-fade-in">
-          <div 
+          <div
             className="absolute inset-0 bg-black/70 backdrop-blur-sm"
             onClick={() => setShowConfirm(false)}
           />
-          
+
           <div className="relative glass-card w-full max-w-sm p-6 text-center transform scale-100 animate-fade-in">
             <div className="w-12 h-12 mx-auto mb-4 rounded-full bg-red-500/10 flex items-center justify-center">
               <Icons.AlertCircle className="w-6 h-6 text-red-500" />
             </div>
-            
-            <h2 className="text-lg font-heading font-bold mb-2">Clear All Entries?</h2>
+
+            <h2 className="text-lg font-heading font-bold mb-2">
+              Clear All Entries?
+            </h2>
             <p className="text-sm text-zinc-400 mb-6">
-              This will permanently delete all {entries.length} time entries. This action cannot be undone.
+              This will permanently delete all {entries.length} time entries.
+              This action cannot be undone.
             </p>
 
             <div className="flex gap-3">
