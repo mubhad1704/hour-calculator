@@ -232,11 +232,8 @@ const HourCalculator = () => {
             </div>
             <div>
               <h1 className="text-xl font-heading font-bold tracking-tight">
-                TimeFlow
-              </h1>
-              <p className="text-xs text-zinc-500 font-medium">
                 Hour Calculator
-              </p>
+              </h1>
             </div>
           </div>
 
